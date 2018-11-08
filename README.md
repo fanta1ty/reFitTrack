@@ -1,5 +1,9 @@
 # reFitTrack
-   This project was re-written from the original one (https://github.com/Yalantis/FitTrack) because I found that project was created over 2 years ago and could not work normally with the latest Swift (4.2).
+- This project was re-written from the original one (https://github.com/Yalantis/FitTrack) because I found that project was created over 2 years ago and could not work normally with the latest Swift (4.2).
+- This project is a concept of a fitness app.
+
+# Demo
+<img src="https://d13yacurqjgara.cloudfront.net/users/226733/screenshots/2337201/open-uri20151106-3-2y7q4w" />
 
 ## License
 
