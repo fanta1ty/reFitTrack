@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina5_5" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="TableHeaderSectionView" customModule="reFitTrack" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="114"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hqP-uy-B4v">
+                    <rect key="frame" x="0.0" y="64" width="414" height="30"/>
+                    <subviews>
+                        <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Jc5-6E-5b7" customClass="SegmentView" customModule="reFitTrack" customModuleProvider="target">
+                            <rect key="frame" x="16" y="0.0" width="382" height="30"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="30" id="Vaj-nE-Q7E"/>
+                            </constraints>
+                        </view>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5wp-ZB-zcu">
+                            <rect key="frame" x="16" y="0.0" width="191" height="30"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                            <state key="normal" title="Timeline">
+                                <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </state>
+                            <connections>
+                                <action selector="onTimelineButton:" destination="iN0-l3-epB" eventType="touchUpInside" id="BQO-gg-8d4"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nhc-0p-tax">
+                            <rect key="frame" x="206" y="0.0" width="192" height="30"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                            <state key="normal" title="Statistics">
+                                <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </state>
+                            <connections>
+                                <action selector="onStatisticsButton:" destination="iN0-l3-epB" eventType="touchUpInside" id="nNu-d4-HqG"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstItem="5wp-ZB-zcu" firstAttribute="top" secondItem="hqP-uy-B4v" secondAttribute="top" id="BVI-Ms-m5W"/>
+                        <constraint firstAttribute="height" constant="30" id="EZU-Bx-IJL"/>
+                        <constraint firstAttribute="bottom" secondItem="5wp-ZB-zcu" secondAttribute="bottom" id="Nsq-XA-eiH"/>
+                        <constraint firstAttribute="trailing" secondItem="Jc5-6E-5b7" secondAttribute="trailing" constant="16" id="Rhc-f0-g3m"/>
+                        <constraint firstItem="nhc-0p-tax" firstAttribute="top" secondItem="hqP-uy-B4v" secondAttribute="top" id="Rob-SP-nVU"/>
+                        <constraint firstAttribute="trailing" secondItem="nhc-0p-tax" secondAttribute="trailing" constant="16" id="Tc8-kK-k2V"/>
+                        <constraint firstItem="5wp-ZB-zcu" firstAttribute="leading" secondItem="hqP-uy-B4v" secondAttribute="leading" constant="16" id="dG8-hJ-Adq"/>
+                        <constraint firstItem="5wp-ZB-zcu" firstAttribute="width" secondItem="hqP-uy-B4v" secondAttribute="width" multiplier="0.461" id="eFV-Sz-mF3"/>
+                        <constraint firstItem="Jc5-6E-5b7" firstAttribute="top" secondItem="hqP-uy-B4v" secondAttribute="top" id="rJH-9m-gls"/>
+                        <constraint firstAttribute="bottom" secondItem="nhc-0p-tax" secondAttribute="bottom" id="t4G-X6-73Y"/>
+                        <constraint firstItem="5wp-ZB-zcu" firstAttribute="width" secondItem="nhc-0p-tax" secondAttribute="width" constant="-1" id="vVy-GH-vpy"/>
+                        <constraint firstItem="Jc5-6E-5b7" firstAttribute="leading" secondItem="hqP-uy-B4v" secondAttribute="leading" constant="16" id="wjO-du-xYM"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="hqP-uy-B4v" secondAttribute="trailing" id="Sku-fF-RRb"/>
+                <constraint firstItem="hqP-uy-B4v" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="64" id="cY9-3J-34W"/>
+                <constraint firstItem="hqP-uy-B4v" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="zds-4h-gkd"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="segmentView" destination="Jc5-6E-5b7" id="Zkl-jV-rcp"/>
+                <outlet property="statisticsButton" destination="nhc-0p-tax" id="q7C-OJ-9V8"/>
+                <outlet property="timelineButton" destination="5wp-ZB-zcu" id="7Sq-3M-hvw"/>
+            </connections>
+            <point key="canvasLocation" x="40.579710144927539" y="46.467391304347828"/>
+        </view>
+    </objects>
+</document>

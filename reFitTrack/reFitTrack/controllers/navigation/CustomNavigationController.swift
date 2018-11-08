@@ -12,7 +12,16 @@ class CustomNavigationController: UINavigationController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        configureNavigationBar()
+    }
+}
 
-        // Do any additional setup after loading the view.
+extension CustomNavigationController {
+    fileprivate func configureNavigationBar() {
+        navigationBar.setBackgroundImage(UIImage(), for: .default)
+        navigationBar.shadowImage = UIImage()
+        navigationBar.isTranslucent = true
+        isNavigationBarHidden = true
     }
 }

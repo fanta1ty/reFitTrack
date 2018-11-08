@@ -36,13 +36,71 @@
                     <view key="view" contentMode="scaleToFill" id="sUB-vf-vko">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="01_01_Background" translatesAutoresizingMaskIntoConstraints="NO" id="3gf-M8-2BN">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                            </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6TN-TW-c8i">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="114"/>
+                                <color key="backgroundColor" red="0.45882352941176469" green="0.3529411764705882" blue="0.80000000000000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="114" id="yVm-w8-1mo"/>
+                                </constraints>
+                            </view>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="tOS-PG-HZJ">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <inset key="scrollIndicatorInsets" minX="7" minY="0.0" maxX="7" maxY="0.0"/>
+                                <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <view key="tableHeaderView" contentMode="scaleToFill" id="siW-uH-NpY">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </view>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="TextCell" id="ppy-ff-q2c">
+                                        <rect key="frame" x="0.0" y="764" width="414" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ppy-ff-q2c" id="dBd-XL-4w0">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.666666666666664"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="delegate" destination="mh0-6H-YTU" id="8ng-xx-G7c"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="3gf-M8-2BN" firstAttribute="top" secondItem="sUB-vf-vko" secondAttribute="top" id="IDs-JX-Mro"/>
+                            <constraint firstAttribute="trailing" secondItem="6TN-TW-c8i" secondAttribute="trailing" id="KK1-Tf-o5p"/>
+                            <constraint firstItem="vRt-ha-dI2" firstAttribute="top" secondItem="tOS-PG-HZJ" secondAttribute="bottom" id="XOd-aD-2G8"/>
+                            <constraint firstAttribute="trailing" secondItem="3gf-M8-2BN" secondAttribute="trailing" id="Y3I-XR-XQj"/>
+                            <constraint firstItem="vRt-ha-dI2" firstAttribute="top" secondItem="3gf-M8-2BN" secondAttribute="bottom" id="ZUj-gq-FoU"/>
+                            <constraint firstItem="tOS-PG-HZJ" firstAttribute="top" secondItem="sUB-vf-vko" secondAttribute="top" id="afn-jf-Kon"/>
+                            <constraint firstItem="6TN-TW-c8i" firstAttribute="top" secondItem="sUB-vf-vko" secondAttribute="top" id="jX8-kG-yJu"/>
+                            <constraint firstItem="6TN-TW-c8i" firstAttribute="leading" secondItem="sUB-vf-vko" secondAttribute="leading" id="wDl-9N-gEQ"/>
+                            <constraint firstAttribute="trailing" secondItem="tOS-PG-HZJ" secondAttribute="trailing" id="xuW-0Q-07U"/>
+                            <constraint firstItem="3gf-M8-2BN" firstAttribute="leading" secondItem="sUB-vf-vko" secondAttribute="leading" id="yqE-d1-lBK"/>
+                            <constraint firstItem="tOS-PG-HZJ" firstAttribute="leading" secondItem="sUB-vf-vko" secondAttribute="leading" id="zKw-aw-G7Z"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="IIl-e7-nSo"/>
+                    <connections>
+                        <outlet property="activityTableView" destination="tOS-PG-HZJ" id="2mR-43-8NH"/>
+                        <outlet property="activityTableViewLeadingConstraint" destination="zKw-aw-G7Z" id="HcA-zf-olc"/>
+                        <outlet property="activityTableViewTrailingConstraint" destination="xuW-0Q-07U" id="vc4-RT-z4Q"/>
+                        <outlet property="animationView" destination="siW-uH-NpY" id="8qX-c3-TCw"/>
+                        <outlet property="helperView" destination="6TN-TW-c8i" id="ymN-4k-nAX"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3eS-dq-y2c" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="329" y="7"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="01_01_Background" width="375" height="667"/>
+    </resources>
 </document>
