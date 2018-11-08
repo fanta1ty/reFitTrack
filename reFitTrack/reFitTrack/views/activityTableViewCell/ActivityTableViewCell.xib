@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina5_5" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="ActivityTableViewCell" rowHeight="105" id="KGk-i7-Jjw" customClass="ActivityTableViewCell" customModule="reFitTrack" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="105"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="414" height="104.66666666666667"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="3Al-2s-214">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="104.66666666666667"/>
+                    </imageView>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="02_01_Logo" translatesAutoresizingMaskIntoConstraints="NO" id="AbA-z0-Ojy">
+                        <rect key="frame" x="16" y="16" width="44" height="44"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="44" id="T6w-RM-PkI"/>
+                            <constraint firstAttribute="height" constant="44" id="lnr-pe-afC"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8ft-3J-drB">
+                        <rect key="frame" x="84" y="23.999999999999996" width="185" height="33.666666666666657"/>
+                        <string key="text">Walk from Best Buy to Home
+341 steps / 2,1 km / 214 cal</string>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="02_12_Line" translatesAutoresizingMaskIntoConstraints="NO" id="2VE-Er-ghE">
+                        <rect key="frame" x="49" y="63" width="2" height="60"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="60" id="Xrl-7E-gsl"/>
+                            <constraint firstAttribute="width" constant="2" id="jW7-UA-hIm"/>
+                        </constraints>
+                    </imageView>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="AbA-z0-Ojy" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="16" id="0vD-h6-x14"/>
+                    <constraint firstItem="AbA-z0-Ojy" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="5kS-aB-Ica"/>
+                    <constraint firstItem="8ft-3J-drB" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="13" id="7BC-jS-2hg"/>
+                    <constraint firstItem="8ft-3J-drB" firstAttribute="leading" secondItem="AbA-z0-Ojy" secondAttribute="trailing" constant="24" id="BqW-zB-Fuv"/>
+                    <constraint firstItem="2VE-Er-ghE" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="52" id="Gru-zN-Cvl"/>
+                    <constraint firstAttribute="bottom" secondItem="3Al-2s-214" secondAttribute="bottom" id="PrO-hD-ooz"/>
+                    <constraint firstItem="3Al-2s-214" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="f3X-pG-5rn"/>
+                    <constraint firstItem="3Al-2s-214" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="hva-AO-x0w"/>
+                    <constraint firstAttribute="trailing" secondItem="3Al-2s-214" secondAttribute="trailing" id="lQQ-Qk-fQy"/>
+                    <constraint firstItem="2VE-Er-ghE" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="29" id="ze7-mS-1oQ"/>
+                </constraints>
+            </tableViewCellContentView>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <connections>
+                <outlet property="backgroundImageView" destination="3Al-2s-214" id="IiF-Y0-hiP"/>
+            </connections>
+            <point key="canvasLocation" x="105.79710144927537" y="47.690217391304351"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="02_01_Logo" width="48" height="48"/>
+        <image name="02_12_Line" width="2" height="42"/>
+    </resources>
+</document>

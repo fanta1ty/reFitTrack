@@ -20,6 +20,8 @@
 		6FCE46382194249300B4E305 /* TableHeaderSectionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6FCE46372194249300B4E305 /* TableHeaderSectionView.xib */; };
 		6FCE463B21942AD100B4E305 /* SegmentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FCE463A21942AD100B4E305 /* SegmentView.swift */; };
 		6FCE463D21942D8D00B4E305 /* UIColorExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FCE463C21942D8D00B4E305 /* UIColorExtensions.swift */; };
+		6FCE4641219433D700B4E305 /* ActivityTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FCE463F219433D700B4E305 /* ActivityTableViewCell.swift */; };
+		6FCE4642219433D700B4E305 /* ActivityTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6FCE4640219433D700B4E305 /* ActivityTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +40,8 @@
 		6FCE46372194249300B4E305 /* TableHeaderSectionView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TableHeaderSectionView.xib; sourceTree = "<group>"; };
 		6FCE463A21942AD100B4E305 /* SegmentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegmentView.swift; sourceTree = "<group>"; };
 		6FCE463C21942D8D00B4E305 /* UIColorExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtensions.swift; sourceTree = "<group>"; };
+		6FCE463F219433D700B4E305 /* ActivityTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityTableViewCell.swift; sourceTree = "<group>"; };
+		6FCE4640219433D700B4E305 /* ActivityTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ActivityTableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -137,6 +141,7 @@
 		6FCE46332194228800B4E305 /* views */ = {
 			isa = PBXGroup;
 			children = (
+				6FCE463E2194339500B4E305 /* activityTableViewCell */,
 				6FCE463921942AA100B4E305 /* segment */,
 				6FCE46342194243B00B4E305 /* tableHeaderSection */,
 			);
@@ -158,6 +163,15 @@
 				6FCE463A21942AD100B4E305 /* SegmentView.swift */,
 			);
 			path = segment;
+			sourceTree = "<group>";
+		};
+		6FCE463E2194339500B4E305 /* activityTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				6FCE463F219433D700B4E305 /* ActivityTableViewCell.swift */,
+				6FCE4640219433D700B4E305 /* ActivityTableViewCell.xib */,
+			);
+			path = activityTableViewCell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -220,6 +234,7 @@
 			files = (
 				6FCE46382194249300B4E305 /* TableHeaderSectionView.xib in Resources */,
 				6FCE461C2194092C00B4E305 /* LaunchScreen.storyboard in Resources */,
+				6FCE4642219433D700B4E305 /* ActivityTableViewCell.xib in Resources */,
 				6FCE46192194092C00B4E305 /* Assets.xcassets in Resources */,
 				6FCE46172194092900B4E305 /* Main.storyboard in Resources */,
 			);
@@ -234,6 +249,7 @@
 			files = (
 				6FCE463D21942D8D00B4E305 /* UIColorExtensions.swift in Sources */,
 				6FCE462521940AAF00B4E305 /* LaunchZoomAnimation.swift in Sources */,
+				6FCE4641219433D700B4E305 /* ActivityTableViewCell.swift in Sources */,
 				6FCE462F2194157F00B4E305 /* CustomNavigationController.swift in Sources */,
 				6FCE463B21942AD100B4E305 /* SegmentView.swift in Sources */,
 				6FCE46362194247F00B4E305 /* TableHeaderSectionView.swift in Sources */,

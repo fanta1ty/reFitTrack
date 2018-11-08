@@ -10,7 +10,7 @@ import UIKit
 fileprivate let startIndicatorPosition: CGFloat = 0.0
 
 class TableHeaderSectionView: UITableViewHeaderFooterView {
-    static let identifier: String = "TableHeaderSectionView"
+    static let identifier = "TableHeaderSectionView"
     
     @IBOutlet weak var segmentView: SegmentView!
     @IBOutlet weak var timelineButton: UIButton!

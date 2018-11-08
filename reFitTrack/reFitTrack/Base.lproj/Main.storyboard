@@ -58,7 +58,7 @@
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </view>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="TextCell" id="ppy-ff-q2c">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="activityTableViewCell" id="ppy-ff-q2c">
                                         <rect key="frame" x="0.0" y="764" width="414" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ppy-ff-q2c" id="dBd-XL-4w0">
@@ -68,6 +68,7 @@
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
+                                    <outlet property="dataSource" destination="mh0-6H-YTU" id="ECc-NO-4Mx"/>
                                     <outlet property="delegate" destination="mh0-6H-YTU" id="8ng-xx-G7c"/>
                                 </connections>
                             </tableView>
@@ -86,7 +87,14 @@
                             <constraint firstItem="tOS-PG-HZJ" firstAttribute="leading" secondItem="sUB-vf-vko" secondAttribute="leading" id="zKw-aw-G7Z"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="IIl-e7-nSo"/>
+                    <navigationItem key="navigationItem" id="IIl-e7-nSo">
+                        <barButtonItem key="leftBarButtonItem" image="02_21_Icon" id="GB4-Uk-By7">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" image="02_22_Icon" id="dXb-6U-sMC">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="activityTableView" destination="tOS-PG-HZJ" id="2mR-43-8NH"/>
                         <outlet property="activityTableViewLeadingConstraint" destination="zKw-aw-G7Z" id="HcA-zf-olc"/>
@@ -102,5 +110,7 @@
     </scenes>
     <resources>
         <image name="01_01_Background" width="375" height="667"/>
+        <image name="02_21_Icon" width="14" height="14"/>
+        <image name="02_22_Icon" width="16" height="17"/>
     </resources>
 </document>

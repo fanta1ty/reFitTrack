@@ -43,6 +43,17 @@ class MainViewController: UIViewController {
         configuration()
     }
 }
+//MARL: ScrollViewDelegate
+extension MainViewController {
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        if scrollView.contentOffset.y > 0 {
+            
+        } else {
+            helperView.alpha = 0
+        }
+    }
+}
+
 //MARK: UITableViewDelegate
 extension MainViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
@@ -55,8 +66,37 @@ extension MainViewController: UITableViewDelegate {
         return headerSection
     }
     
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        let activityTableViewCell = cell as! ActivityTableViewCell
+        
+        if indexPath.row == 0 {
+            activityTableViewCell.setBackgroundImage(image: UIImage(named: MainScreenImageConstants.whiteBackgroundTop.rawValue))
+        } else if indexPath.row == rowsCount - 1 {
+            activityTableViewCell.setBackgroundImage(image: UIImage(named: MainScreenImageConstants.whiteBackgroundBottom.rawValue))
+            cell.clipsToBounds = true
+        } else {
+            activityTableViewCell.setBackgroundImage(image: UIImage(named: MainScreenImageConstants.whiteBackgroundMiddle.rawValue))
+        }
+    }
+    
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return tableHeaderSectionViewHeight
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return tableCellHeight
+    }
+}
+
+//MARK: UITableViewDatasource
+extension MainViewController: UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return rowsCount
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: ActivityTableViewCell.identifier, for: indexPath)
+        return cell
     }
 }
 
@@ -71,5 +111,8 @@ extension MainViewController {
     fileprivate func configureTableView() {
         var nib = UINib(nibName: TableHeaderSectionView.identifier, bundle: nil)
         activityTableView.register(nib, forHeaderFooterViewReuseIdentifier: TableHeaderSectionView.identifier)
+        
+        nib = UINib(nibName: ActivityTableViewCell.identifier, bundle: nil)
+        activityTableView.register(nib, forCellReuseIdentifier: ActivityTableViewCell.identifier)
     }
 }

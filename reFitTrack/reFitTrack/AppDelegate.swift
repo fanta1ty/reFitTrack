@@ -22,8 +22,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 extension AppDelegate {
     fileprivate func configuration() {
-        let backgroundImage = UIImage(named: LaunchScreenConstants.backgroundImage.rawValue)
-        let animationImage  = UIImage(named: LaunchScreenConstants.logoImage.rawValue)
+        let backgroundImage = UIImage(named: LaunchScreenImageConstants.background.rawValue)
+        let animationImage  = UIImage(named: LaunchScreenImageConstants.logo.rawValue)
         
         LaunchZoomAnimation.performAnimation(window: window,
                                              navigationControllerIdentifier: NavigationConstants.defaultNavigation.rawValue,
