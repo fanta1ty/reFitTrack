@@ -42,14 +42,23 @@ class MainViewController: UIViewController {
         
         configuration()
     }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        configureAnimationView()
+    }
 }
 //MARL: ScrollViewDelegate
 extension MainViewController {
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         if scrollView.contentOffset.y > 0 {
+            animationView.alpha = 1 - scrollView.contentOffset.y / animationView.frameHeight()
+            helperView.alpha    = min(1 - animationView.alpha, maxHeaderSectionAlphaValue)
             
         } else {
-            helperView.alpha = 0
+            animationView.alpha = 1
+            helperView.alpha    = 0
         }
     }
 }
@@ -100,12 +109,23 @@ extension MainViewController: UITableViewDataSource {
     }
 }
 
-//MARK: Functions
+//MARK: Private Functions
 extension MainViewController {
     fileprivate func configuration() {
         backgroundHeaderSectionView = UIView(frame: helperView.frame)
+        animationView.frame = CGRect(x: view.frameX(),
+                                     y: view.frameY(),
+                                     width: view.frameWidth() - activityTableViewLeadingConstraint.constant + activityTableViewTrailingConstraint.constant,
+                                     height: view.frameHeight())
         
+        configureTitleView()
         configureTableView()
+    }
+    
+    fileprivate func configureTitleView() {
+        let logo                    = UIImage(named: MainScreenImageConstants.title.rawValue)
+        let titleView               = UIImageView(image: logo)
+        navigationItem.titleView    = titleView
     }
     
     fileprivate func configureTableView() {
@@ -114,5 +134,9 @@ extension MainViewController {
         
         nib = UINib(nibName: ActivityTableViewCell.identifier, bundle: nil)
         activityTableView.register(nib, forCellReuseIdentifier: ActivityTableViewCell.identifier)
+    }
+    
+    fileprivate func configureAnimationView() {
+    
     }
 }
