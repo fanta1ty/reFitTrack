@@ -53,3 +53,9 @@ enum NavigationConstants: String {
 enum StoryboardConstants: String {
     case defaultStoryboard = "Main"
 }
+
+enum FontNameConstants: String {
+    case normal = "HelveticaNeue"
+    case light  = "HelveticaNeue-Light"
+    case bold   = "HelveticaNeue-Bold"
+}

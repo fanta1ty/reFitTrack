@@ -12,12 +12,12 @@ struct ActivityModel {
     let title: String!
     let goal: Float!
     let currentProgress: Float!
-    let activityResouce: ActivityResourceModel!
+    let activityResource: ActivityResourceModel!
     
-    init(title: String, goal: Float, currentProgress: Float, activityResouce: ActivityResourceModel) {
+    init(title: String, goal: Float, currentProgress: Float, activityResource: ActivityResourceModel) {
         self.title              = title
         self.goal               = goal
         self.currentProgress    = currentProgress
-        self.activityResouce    = activityResouce
+        self.activityResource   = activityResource
     }
 }

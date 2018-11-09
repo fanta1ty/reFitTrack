@@ -15,7 +15,7 @@ fileprivate let rowsCount                                   = 10
 
 //Others
 fileprivate let animationDuration: TimeInterval     = 0.3
-fileprivate let maxHeaderSectionAlphaValue: CGFloat = 0.95
+fileprivate let maxHeaderSectionAlphaValue: CGFloat = 1.0
 fileprivate let cornerRadius: CGFloat               = 12.0
 fileprivate let ratioCoEfficient: CGFloat           = 3.117
 
@@ -27,7 +27,7 @@ fileprivate enum HeaderSectionState {
 class MainViewController: UIViewController {
     
     @IBOutlet weak var helperView: UIView!
-    @IBOutlet weak var animationView: UIView!
+    @IBOutlet weak var animationView: AnimationView!
     @IBOutlet weak var activityTableView: UITableView!
     
     @IBOutlet weak var activityTableViewTrailingConstraint: NSLayoutConstraint!
@@ -47,6 +47,10 @@ class MainViewController: UIViewController {
         super.viewDidAppear(animated)
         
         configureAnimationView()
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
+            self.animationView.performAnimation()
+        }
     }
 }
 //MARL: ScrollViewDelegate
@@ -55,6 +59,16 @@ extension MainViewController {
         if scrollView.contentOffset.y > 0 {
             animationView.alpha = 1 - scrollView.contentOffset.y / animationView.frameHeight()
             helperView.alpha    = min(1 - animationView.alpha, maxHeaderSectionAlphaValue)
+            
+            if animationView.alpha <= 0 && headerSectionState == HeaderSectionState.unvisible {
+                backgroundHeaderSectionView.backgroundColor = helperView.backgroundColor
+                tableHeaderSectionView.backgroundView = backgroundHeaderSectionView
+                headerSectionState = HeaderSectionState.visible
+            } else if animationView.alpha > 0 && headerSectionState == HeaderSectionState.visible {
+                backgroundHeaderSectionView.backgroundColor = .clear
+                tableHeaderSectionView.backgroundView = backgroundHeaderSectionView
+                headerSectionState = HeaderSectionState.unvisible
+            }
             
         } else {
             animationView.alpha = 1
@@ -71,6 +85,7 @@ extension MainViewController: UITableViewDelegate {
         backgroundHeaderSectionView.backgroundColor = .clear
         tableHeaderSectionView = headerSection
         tableHeaderSectionView.backgroundView = backgroundHeaderSectionView
+        
         
         return headerSection
     }
@@ -137,6 +152,18 @@ extension MainViewController {
     }
     
     fileprivate func configureAnimationView() {
-    
+        let activities = ActivityDataProvider.generateActivities()
+        animationView.configureSubviews(activities: activities)
+        animationView.animationFirstPhaseDidFinish = {
+            UIView.beginAnimations(nil, context: nil)
+            UIView.setAnimationDuration(animationDuration)
+            
+            self.animationView.frame = CGRect(x: 0, y: 0, width: self.animationView.frameWidth(),
+                                              height: self.animationView.frameHeight() - (self.animationView.frameHeight() / ratioCoEfficient) - tableHeaderSectionViewHeightDelta)
+            self.activityTableView.tableHeaderView = self.animationView
+            self.navigationController!.isNavigationBarHidden = false
+            
+            UIView.commitAnimations()
+        }
     }
 }
