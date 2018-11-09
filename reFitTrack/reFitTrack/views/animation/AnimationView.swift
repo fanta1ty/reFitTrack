@@ -97,6 +97,9 @@ extension AnimationView {
         if self.activitiesCount > 0 {
             createAndSetStartPositionRoundActivityButtons()
             activityContainerView.flipView(activity: activities.first!)
+            
+            activityContainerView.transform = CGAffineTransform(scaleX: transformScale,
+                                                                y: transformScale)
         }
     }
 }
@@ -148,9 +151,6 @@ extension AnimationView {
         }
         
         subview?.bringSubviewToFront(roundActivityButtons.first!)
-        
-        activityContainerView.transform = CGAffineTransform(scaleX: transformScale,
-                                                            y: transformScale)
         subview?.bringSubviewToFront(activityContainerView)
     }
     
